@@ -1,270 +1,348 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suhaila K | Data Analyst Portfolio</title>
+<meta name="description" content="Portfolio of Suhaila K, aspiring Data Analyst skilled in Python, SQL, Excel, Power BI and Tableau.">
 
-    <title>Suhaila K | Data Analyst</title>
+<style>
+:root {
+  --navy: #081426;
+  --blue: #2878ff;
+  --light: #f4f7fc;
+  --white: #ffffff;
+  --text: #26354a;
+  --muted: #a9b7ca;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f8fafc;
-            color: #172b45;
-        }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.7;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 8%;
-            background: white;
-        }
+nav {
+  background: var(--navy);
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #17365d;
-        }
+.logo { color: white; font-size: 22px; font-weight: bold; }
+.logo span { color: var(--blue); }
 
-        nav a {
-            text-decoration: none;
-            color: #17365d;
-            margin-left: 20px;
-        }
+nav a {
+  color: #dce6f5;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
 
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 60px 10%;
-            background: #eef4fb;
-        }
+nav a:hover { color: #62a0ff; }
 
-        .hero h1 {
-            font-size: 55px;
-            margin: 15px 0;
-        }
+.hero {
+  background: linear-gradient(120deg, #081426, #102b50);
+  color: white;
+  padding: 115px 10%;
+  min-height: 490px;
+  display: flex;
+  align-items: center;
+}
 
-        .hero h2 {
-            color: #2878c8;
-            font-size: 25px;
-        }
+.hero-content { max-width: 760px; }
 
-        .hero p {
-            max-width: 650px;
-            line-height: 1.8;
-            color: #536579;
-            font-size: 17px;
-        }
+.eyebrow {
+  color: #72aaff;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-        .button {
-            display: inline-block;
-            width: fit-content;
-            margin-top: 25px;
-            padding: 13px 25px;
-            background: #2878c8;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.15;
+  margin: 18px 0;
+}
 
-        @media(max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
-            }
+.hero h1 span { color: #4d91ff; }
 
-            nav {
-                padding: 20px 5%;
-            }
-        }
-    </style>
+.hero p {
+  color: var(--muted);
+  max-width: 650px;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--blue);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #7294bd;
+}
+
+section { padding: 75px 10%; }
+
+.section-title {
+  font-size: 32px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.section-line {
+  width: 55px;
+  height: 4px;
+  background: var(--blue);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.about-text { max-width: 850px; font-size: 16px; }
+
+.skills-section { background: #eaf0fa; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.skill {
+  background: white;
+  padding: 22px 15px;
+  border-radius: 9px;
+  text-align: center;
+  font-weight: bold;
+  color: #17365d;
+  border: 1px solid #e1e8f3;
+  transition: 0.2s;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+}
+
+.experience-card, .project-card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #e5eaf2;
+  box-shadow: 0 8px 25px rgba(10, 35, 70, 0.05);
+  margin-top: 22px;
+}
+
+.experience-card h3, .project-card h3 {
+  color: var(--navy);
+  font-size: 21px;
+}
+
+.date {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.experience-card ul {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.projects-section { background: #eaf0fa; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.project-card p { margin: 12px 0; }
+
+.project-tag {
+  display: inline-block;
+  background: #eaf2ff;
+  color: #175bc2;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px 4px 10px 0;
+}
+
+.project-link {
+  color: var(--blue);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-section {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+}
+
+.contact-section .section-title { color: white; }
+.contact-section p { color: var(--muted); margin-bottom: 20px; }
+.contact-section a { color: #75aaff; text-decoration: none; }
+
+footer {
+  background: #050e1c;
+  color: #9cabc0;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  nav { flex-direction: column; gap: 12px; }
+  nav a { margin: 0 7px; font-size: 12px; }
+  .hero { padding: 80px 8%; }
+  section { padding: 60px 8%; }
+}
+</style>
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo">SUHAILA K.</div>
+<nav>
+  <div class="logo">SUHAILA<span>.</span></div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-        </div>
-    </nav>
-
-    <section class="hero" id="home">
-
-        <h2>HELLO, I'M SUHAILA</h2>
-
-        <h1>Data Analyst</h1>
-
-        <p>
-            Economics graduate and aspiring Data Analyst
-            with practical experience in data analysis,
-            data visualization, KPI reporting and dashboard
-            development. Passionate about transforming
-            raw data into meaningful business insights.
-        </p>
-
-        <a href="#projects" class="button">
-            Explore My Work
-        </a>
-
-    </section>
-            ```html
-<section id="about" style="padding:80px 10%; background:white;">
-
-    <h2 style="color:#17365d; font-size:32px;">
-        About Me
-    </h2>
-
-    <h3 style="color:#2878c8; margin-top:20px;">
-        Data Analyst | Economics Graduate
-    </h3>
-
-    <p style="max-width:750px; line-height:1.9;
-    color:#536579; margin-top:20px;">
-
-        I am an aspiring Data Analyst with a Bachelor's
-        degree in Economics from Kannur University and
-        practical experience in data analysis through my
-        internship at Knovista Technologies.
-
-        <br><br>
-
-        I have experience working with data visualization,
-        KPI reporting, data manipulation and dashboard
-        development. I am also familiar with Python,
-        SQL, Excel, Power BI and Tableau.
-
-        <br><br>
-
-        I enjoy transforming raw data into meaningful
-        insights and developing data-driven solutions
-        that support better business decisions.
-
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">WELCOME TO MY PORTFOLIO</div>
+    <h1>Hi, I'm Suhaila K.<br><span>Data Analyst</span></h1>
+    <p>
+      Transforming data into meaningful insights through
+      analytics, visualization and business intelligence.
+      Passionate about solving problems with data.
     </p>
+    <a class="btn" href="#projects">Explore My Projects</a>
+    <a class="btn btn-outline" href="#contact">Contact Me</a>
+  </div>
+</header>
 
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="section-line"></div>
+  <p class="about-text">
+    I am an aspiring Data Analyst with a background in Economics
+    and practical experience in data analysis. I enjoy working
+    with data to identify patterns, generate insights and support
+    business decisions. I have experience using Python, SQL,
+    Excel, Power BI and Tableau, with an interest in data
+    visualization, reporting and machine learning.
+  </p>
 </section>
-```
-    
-<section id="skills" style="padding:80px 10%; background:#eef4fb;">
 
-    <h2 style="color:#17365d; font-size:32px;">
-        Technical Skills
-    </h2>
-
-    <p style="color:#536579; margin:15px 0 30px;">
-        Tools and technologies I use for data analysis and visualization.
-    </p>
-
-    <div style="display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;">
-
-        <div class="skill-card">Excel</div>
-        <div class="skill-card">SQL & MySQL</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">Pandas & NumPy</div>
-        <div class="skill-card">Power BI</div>
-        <div class="skill-card">Tableau</div>
-
-    </div>
-
-    <style>
-        .skill-card {
-            background:white;
-            padding:25px;
-            text-align:center;
-            border-radius:10px;
-            color:#17365d;
-            font-weight:bold;
-            box-shadow:0 3px 12px rgba(0,0,0,0.05);
-        }
-    </style>
-
+<section class="skills-section" id="skills">
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="section-line"></div>
+  <div class="skills-grid">
+    <div class="skill">Python</div>
+    <div class="skill">SQL & MySQL</div>
+    <div class="skill">Microsoft Excel</div>
+    <div class="skill">Power BI</div>
+    <div class="skill">Tableau</div>
+    <div class="skill">Pandas & NumPy</div>
+    <div class="skill">Data Cleaning</div>
+    <div class="skill">Data Visualization</div>
+    <div class="skill">Dashboard Development</div>
+    <div class="skill">Business Reporting</div>
+    <div class="skill">Machine Learning Fundamentals</div>
+    <div class="skill">Analytical Thinking</div>
+  </div>
 </section>
-<section id="experience" style="padding:80px 10%; background:#ffffff;">
-  <h2 style="color:#17365d; text-align:center;">Experience</h2>
 
-  <div style="max-width:800px; margin:30px auto; padding:25px; background:#eef4fb; border-radius:10px;">
-    <h3 style="color:#17365d;">Data Analysis Intern</h3>
+<section id="experience">
+  <h2 class="section-title">Experience</h2>
+  <div class="section-line"></div>
+  <div class="experience-card">
+    <h3>Data Analysis Intern</h3>
     <p><strong>Knovista Technologies | Kochi</strong></p>
-    <p>December 2025 – June 2026</p>
-
-    <ul style="line-height:1.8; color:#444;">
+    <p class="date">December 2025 – June 2026</p>
+    <ul>
       <li>Worked on practical data analysis projects and real-world datasets.</li>
       <li>Performed data manipulation and supported data cleaning activities.</li>
-      <li>Created data visualisations and dashboards to present insights.</li>
+      <li>Created data visualizations and dashboards to present insights.</li>
       <li>Worked with KPI reporting and explored machine learning concepts.</li>
     </ul>
   </div>
 </section>
-    <!-- Unified Leads ML Project -->
-<section id="unified-leads" style="padding:80px 10%; background:#ffffff;">
 
-  <h2 style="text-align:center; color:#17365d;">
-    Unified Leads – Lead Conversion Prediction
-  </h2>
+<section class="projects-section" id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="section-line"></div>
 
-  <p style="text-align:center; color:#666;">
-    Machine Learning Project
-  </p>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Sales Performance Analysis</h3>
+      <span class="project-tag">Tableau</span>
+      <span class="project-tag">Data Visualization</span>
+      <p>
+        Analyzed the Sample Superstore dataset to explore
+        sales and profit trends, product categories,
+        customer segments and regional performance.
+      </p>
+      <a class="project-link"
+         href="https://public.tableau.com/views/salesperformanceanalysisprj/Dashboard5"
+         target="_blank" rel="noopener">
+        View Interactive Dashboard →
+      </a>
+    </div>
 
-  <div style="max-width:850px; margin:30px auto; padding:30px;
-              background:#eef4fb; border-radius:12px;">
-
-    <h3 style="color:#17365d;">Project Overview</h3>
-
-    <p style="line-height:1.8; color:#444;">
-      Developed a machine learning project to explore lead conversion
-      prediction and identify high-potential leads. The objective was
-      to help sales teams prioritise follow-ups, improve efficiency,
-      and make better data-driven marketing decisions.
-    </p>
-
-    <h3 style="color:#17365d;">Project Objectives</h3>
-
-    <ul style="line-height:1.9; color:#444;">
-      <li>Prioritise leads based on predicted conversion probability.</li>
-      <li>Improve sales follow-up efficiency.</li>
-      <li>Analyse lead sources, campaigns and stages.</li>
-      <li>Support data-driven sales and marketing decisions.</li>
-    </ul>
-
-    <h3 style="color:#17365d;">Technical Work</h3>
-
-    <ul style="line-height:1.9; color:#444;">
-      <li>Data cleaning and preprocessing.</li>
-      <li>Exploratory data analysis.</li>
-      <li>Machine learning model training.</li>
-      <li>Model evaluation and performance analysis.</li>
-    </ul>
-
-    <h3 style="color:#17365d;">Project Outcome</h3>
-
-    <p style="line-height:1.8; color:#444;">
-      Trained and evaluated machine learning models. The evaluation
-      indicated that reliable lead conversion prediction was not
-      achievable with the available dataset.
-    </p>
-
-    <h3 style="color:#17365d;">Tools & Technologies</h3>
-
-    <p style="color:#17365d; font-weight:bold;">
-      Python | Pandas | NumPy | Machine Learning
-    </p>
-
+    <div class="project-card">
+      <h3>Machine Learning – Lead Analysis</h3>
+      <span class="project-tag">Python</span>
+      <span class="project-tag">Machine Learning</span>
+      <p>
+        A machine learning project focused on analyzing
+        lead data and exploring conversion prediction.
+        More project details coming soon.
+      </p>
+      <a class="project-link" href="#contact">
+        Project details coming soon
+      </a>
+    </div>
   </div>
 </section>
+
+<section id="contact" class="contact-section">
+  <h2 class="section-title">Let's Connect</h2>
+  <p>I'm open to Data Analyst opportunities and professional connections.</p>
+  <p>Email: <a href="mailto:suhailak772024@gmail.com">suhailak772024@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/suhaila-k/" target="_blank" rel="noopener">Connect with me</a></p>
+  <p>GitHub: <a href="https://github.com/suhailak786" target="_blank" rel="noopener">View my GitHub</a></p>
+</section>
+
+<footer>
+  © 2026 Suhaila K | Data Analyst Portfolio
+</footer>
+
 </body>
-    
 </html>
